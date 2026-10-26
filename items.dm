@@ -202,13 +202,13 @@ var/datum/engine_eject/engine_eject_control
 		usr.wear_suit = src
 		usr.wear_suit:suffix = "wearing"
 	usr.UpdateClothing()
-	..()
+
 /obj/item/weapon/card/id/verb/remove()
 	if(usr.canmove)
 		usr.wear_suit:suffix = null
 		usr.wear_suit = null
 	usr.UpdateClothing()
-	..()
+
 /obj/item/weapon/card/id/attack(mob/target, mob/user)
 	if(!target:canmove)
 		if(target:wear_id) target:wear_id:suffix = null

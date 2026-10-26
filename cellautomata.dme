@@ -24,5 +24,5 @@
 #include "mob.dm"
 #include "shuttle.dm"
 #include "weap_sat.dm"
-#include "cellautomata.dmp"
+#include "cellautomata.dmm"
 // END_INCLUDE

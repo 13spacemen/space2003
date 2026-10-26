@@ -558,7 +558,6 @@
 
 
 /mob/proc/UpdateClothing()
-	..()
 	overlays:len = 0
 	if(wear_mask)
 		if(istype(wear_mask, /obj/item/weapon/clothing/mask/gasmask))

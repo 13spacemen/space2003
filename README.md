@@ -16,7 +16,7 @@ Compiling this source with **BYOND 334** (the 2003 version) produces a `.dmb` th
 | [`bitperfect`](https://github.com/13spacemen/space2003/tree/bitperfect) | The decompiled source exactly as recovered. It compiles with BYOND 334 to a bit-perfect copy of the original `.dmb`, and is kept unchanged. |
 | `master` | The source for modern BYOND (516). It does not compile to the original `.dmb`; use the `bitperfect` branch for that. |
 
-The instructions below are for BYOND 516. To build or play the original with BYOND 334, see [The original 2003 version](#the-original-2003-version-byond-334).
+To build or play the original with BYOND 334, see [The original 2003 version](#the-original-2003-version-byond-334).
 
 ## About the decompilation
 
@@ -29,34 +29,6 @@ The source was not only decompiled but also laid out so that BYOND 334 compiles 
 **Icons:** all 30 icons in `rsc/` were extracted from the original `cellautomata.rsc` and are the genuine 2003 files. Each one matches the checksum the original `.dmb` expects.
 
 **The `.rsc`:** compiling also produces a new `cellautomata.rsc`. The 30 files inside it are identical to the original's, but the `.rsc` file as a whole is not. The record order and timestamps differ, and the original also contains leftover space and older, deleted copies of some icons.
-
-## What's in the repository
-
-| Path | Contents |
-|---|---|
-| `cellautomata.dme` | Project file |
-| `*.dm` | DM source code |
-| `cellautomata.dmp` | The station map |
-| `rsc/` | Icons (`.dmi`) extracted from the original `cellautomata.rsc` |
-| `.vscode/launch.json` | Build-and-launch settings for VS Code (see below) |
-
-Compiled output (`.dmb`, `.rsc`) and BYOND's `.lk` lock files are not tracked.
-
-## Building
-
-You need [BYOND](https://www.byond.com/download/) 516.
-
-- **Dream Maker:** open `cellautomata.dme` and choose **Build > Compile**.
-- **Command line:** run `dm.exe cellautomata.dme` (`dm.exe` is in BYOND's `bin` folder).
-- **VS Code:** with the BYOND DreamMaker language extension installed, pick **Launch DreamSeeker** or **Launch DreamDaemon** under **Run and Debug**. Both build the project first.
-
-Building creates `cellautomata.dmb` and `cellautomata.rsc` next to the `.dme`.
-
-## Playing
-
-- **Single-player:** open `cellautomata.dmb` in Dream Seeker.
-- **Hosting:** open `cellautomata.dmb` in Dream Daemon, choose a port and start the world.
-- **Joining:** in Dream Seeker, connect to the host's address and port.
 
 ## The original 2003 version (BYOND 334)
 
