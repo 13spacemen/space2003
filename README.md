@@ -9,6 +9,15 @@ The original source code of this version is not available. This source was recov
 
 Compiling this source with **BYOND 334** (the 2003 version) produces a `.dmb` that is a **bit-perfect copy** of the original `cellautomata.dmb`.
 
+## Branches
+
+| Branch | Contents |
+|---|---|
+| [`bitperfect`](https://github.com/13spacemen/space2003/tree/bitperfect) | The decompiled source exactly as recovered. It compiles with BYOND 334 to a bit-perfect copy of the original `.dmb`, and is kept unchanged. |
+| `master` | The source for modern BYOND (516). It does not compile to the original `.dmb`; use the `bitperfect` branch for that. |
+
+The building and checksum instructions below apply to the `bitperfect` branch.
+
 ## About the decompilation
 
 The source was not only decompiled but also laid out so that BYOND 334 compiles it back to the exact same bytes. That means more than getting the code right: the `.dmb` also records the order of every string, variable, type and proc, plus the line number of every proc, and all of those depend on how the source is written and arranged.
