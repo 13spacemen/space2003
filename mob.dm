@@ -135,6 +135,7 @@
 		main3:screen_loc = "1,1 to 14,1"
 
 		blind:layer = 0
+		blind:plane = -1
 		main1:layer = 19
 		main2:layer = 19
 		main3:layer = 19
@@ -198,6 +199,7 @@
 	stat = 2
 	canmove = 0
 	blind:layer = 0
+	blind:plane = -1
 	icon_state = "dead"
 	var/cancel
 	for(var/mob/M in world)
@@ -282,10 +284,12 @@
 			canmove = 0
 			stat = 1
 			blind:layer = 18
+			blind:plane = 0
 		else
 			stat = 0
 			canmove = 1
 			blind:layer = 0
+			blind:plane = -1
 	density = canmove
 	icon_state = !canmove ? "dead" : "alive"
 	UpdateClothing()

@@ -166,7 +166,8 @@ var/datum/engine_eject/engine_eject_control
 		else sleep(1)
 		spawn(0) throwing()
 	else density = 0
-/obj/item/weapon/verb/throw()
+/obj/item/weapon/verb/toss()
+	set name = "throw"
 	set src in usr
 	if(usr.stat) return
 	loc = usr.loc

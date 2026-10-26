@@ -4,6 +4,7 @@
 *.dm text eol=lf whitespace=indent-with-non-tab
 *.dme text eol=lf
 *.dmp text eol=lf
+*.json text eol=lf
 *.md text eol=lf
 *.txt text eol=lf
 

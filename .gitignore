@@ -1,3 +1,4 @@
 *.dmb
 *.rsc
 *.lk
+.vscode/

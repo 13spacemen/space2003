@@ -16,7 +16,7 @@ Compiling this source with **BYOND 334** (the 2003 version) produces a `.dmb` th
 | [`bitperfect`](https://github.com/13spacemen/space2003/tree/bitperfect) | The decompiled source exactly as recovered. It compiles with BYOND 334 to a bit-perfect copy of the original `.dmb`, and is kept unchanged. |
 | `master` | The source for modern BYOND (516). It does not compile to the original `.dmb`; use the `bitperfect` branch for that. |
 
-The building and checksum instructions below apply to the `bitperfect` branch.
+The instructions below are for BYOND 516. To build or play the original with BYOND 334, see [The original 2003 version](#the-original-2003-version-byond-334).
 
 ## About the decompilation
 
@@ -34,45 +34,32 @@ The source was not only decompiled but also laid out so that BYOND 334 compiles 
 
 | Path | Contents |
 |---|---|
-| `cellautomata.dme` | Project file; open this in Dream Maker |
-| `*.dm` | Decompiled DM source code |
+| `cellautomata.dme` | Project file |
+| `*.dm` | DM source code |
 | `cellautomata.dmp` | The station map |
 | `rsc/` | Icons (`.dmi`) extracted from the original `cellautomata.rsc` |
-| `BYOND334-ModernWindows.zip` | Start files that let BYOND 334 run on modern Windows (see below) |
+| `.vscode/launch.json` | Build-and-launch settings for VS Code (see below) |
 
 Compiled output (`.dmb`, `.rsc`) and BYOND's `.lk` lock files are not tracked.
 
-## Running BYOND 334 on modern Windows
-
-BYOND 334 is from 2003, and on current Windows its programs crash at startup, freeze while hosting, or never finish connecting. `BYOND334-ModernWindows.zip` contains start files and a small Python helper that fix these problems in memory while the programs run. No BYOND file and no game file is changed.
-
-You need:
-
-- BYOND version 334 (a folder with `bin\dreammaker.exe`, `bin\dreamdaemon.exe`, `bin\dreamseeker.exe`, `bin\byond.dll`, ...)
-- Python 3, 64-bit, added to PATH
-
-Extract the zip into your BYOND 334 folder, so that `BYOND334-ModernWindows` sits next to `bin`. The `README.txt` inside the zip has full instructions.
-
 ## Building
 
-1. Drag `cellautomata.dme` onto `Compile (Dream Maker 334).bat`.
-2. In Dream Maker, choose **Build > Compile**.
+You need [BYOND](https://www.byond.com/download/) 516.
 
-This creates `cellautomata.dmb` and `cellautomata.rsc` next to the `.dme`.
+- **Dream Maker:** open `cellautomata.dme` and choose **Build > Compile**.
+- **Command line:** run `dm.exe cellautomata.dme` (`dm.exe` is in BYOND's `bin` folder).
+- **VS Code:** with the BYOND DreamMaker language extension installed, pick **Launch DreamSeeker** or **Launch DreamDaemon** under **Run and Debug**. Both build the project first.
 
-To check the build, compare your `cellautomata.dmb` with the original. The original's checksums are:
-
-```
-MD5      08926c41d7f94e18a52840d8637ce7b8
-SHA-256  e8108a8c3645260e968c29a6d8953f11f2d17ea20c34b5eccf60de08e22f31c7
-```
-
-Dream Maker rewrites `cellautomata.dme` when it opens it: it saves it with Windows (CRLF) line endings, and may add a block of its own settings at the top. Git may then show the file as modified. Neither change affects the compiled `.dmb`.
+Building creates `cellautomata.dmb` and `cellautomata.rsc` next to the `.dme`.
 
 ## Playing
 
-- **Single-player:** drag `cellautomata.dmb` onto `Play single-user (Dream Seeker 334).bat`.
-- **Hosting:** drag `cellautomata.dmb` onto `Host world (Dream Daemon 334).bat`. It hosts on port 5000.
-- **Joining:** run `Join server (Dream Seeker 334).bat` and enter the host's address, for example `192.168.1.20:5000`.
+- **Single-player:** open `cellautomata.dmb` in Dream Seeker.
+- **Hosting:** open `cellautomata.dmb` in Dream Daemon, choose a port and start the world.
+- **Joining:** in Dream Seeker, connect to the host's address and port.
 
-The game runs slowly on the 2003 engine (about 2 game ticks per second). That is how the original engine behaves.
+## The original 2003 version (BYOND 334)
+
+- **Source:** the [`bitperfect`](https://github.com/13spacemen/space2003/tree/bitperfect) branch. Its README explains how to build it with BYOND 334 and check the result against the original `.dmb`.
+- **Original files:** the compiled `cellautomata.dmb` and `cellautomata.rsc` are in the [Pre-Decompile Host Files](https://github.com/13spacemen/space2003/releases/tag/original-2003) release.
+- **BYOND 334 on modern Windows:** BYOND 334's programs crash or freeze on current Windows. The [BYOND 334 Fix Script](https://github.com/13spacemen/space2003/releases/tag/byond-334-fixer) release has start files that fix this.
