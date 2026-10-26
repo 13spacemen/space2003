@@ -1,0 +1,13 @@
+* text=auto
+
+## Enforce text mode and LF line breaks
+*.dm text eol=lf whitespace=indent-with-non-tab
+*.dme text eol=lf
+*.dmp text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+## items.dm holds the "Station Blueprint" ASCII art: a multi-line string whose lines start with spaces.
+## Those spaces are part of the string, so changing them would change the compiled .dmb (no longer bit-perfect).
+## Turn off the space-indent check for this file so git doesn't flag the art as whitespace errors.
+items.dm whitespace=-indent-with-non-tab

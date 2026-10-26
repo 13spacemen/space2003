@@ -1,0 +1,28 @@
+// BEGIN_INTERNALS
+// END_INTERNALS
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+#define FILE_DIR "rsc"
+// END_FILE_DIR
+// BEGIN_PREFERENCES
+#define DEBUG
+// END_PREFERENCES
+// BEGIN_INCLUDE
+#include "aaaDefines.dm"
+#include "airtunnel.dm"
+#include "atmo_control.dm"
+#include "cell_process.dm"
+#include "cellautomata.dm"
+#include "chemical.dm"
+#include "computer.dm"
+#include "cryo.dm"
+#include "demo.dm"
+#include "demo2.dm"
+#include "engine.dm"
+#include "instructions.dm"
+#include "items.dm"
+#include "mob.dm"
+#include "shuttle.dm"
+#include "weap_sat.dm"
+#include "cellautomata.dmp"
+// END_INCLUDE
